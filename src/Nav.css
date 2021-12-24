@@ -60,12 +60,14 @@
   .bm-item-list {
     color: white;
     padding: 0.8em;
+    
   }
   
   /* Individual item */
   .bm-item {
     display: inline-block;
     color: white;
+    text-decoration: none;
   }
   
   /* Styling of overlay */
