@@ -65,6 +65,7 @@
   /* Individual item */
   .bm-item {
     display: inline-block;
+    color: white;
   }
   
   /* Styling of overlay */
