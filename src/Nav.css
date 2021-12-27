@@ -78,11 +78,10 @@
   html {
     background-image: url('../src/assets/Logo/Background-without-star.png');
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 500px 500px;  
+    background-color: black;
     background-position: center;
-    background-attachment: fixed;
-    background-position: 80%;
-    z-index: 9999;
+    padding: 300px;
   }
 
   .Name {
