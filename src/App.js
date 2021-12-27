@@ -11,11 +11,11 @@ function App() {
       <header className="App-header">
         <Nav></Nav>
         <h2 className='Name'>
-        Powers Family ✩ Barbeque Sauce
+       
         </h2>
         <br/>
         <div className='slogan'>
-          Made By Our Family Enjoyed By Yours
+        
         </div>
       </header>
     </div>
