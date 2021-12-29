@@ -1,10 +1,26 @@
 const express = require("express");
+const { ApolloServer } = require('apollo-server-express');
+const mongoose = require('mongoose');
+
 const app = express();
-const cors = require("cors");
-require("dotenv").config({ path: "./config.env" });
 const port = process.env.PORT || 5000;
+const { authMiddleware } = require('./utils/auth');
+const { typeDefs, resolvers } = require('./schemas');
+
+const cors = require("cors");
 app.use(cors());
 app.use(express.json());
+
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/powers', {
+  useFindAndModify: false,
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
+
+require("dotenv").config({ path: "./config.env" });
+
+
+
 // app.use(require("./routes/record"));
 // get driver connection
 const dbo = require("./config/connection");
