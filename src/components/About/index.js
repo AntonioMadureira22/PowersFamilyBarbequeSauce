@@ -6,11 +6,11 @@ function About() {
             <h1 id='about' className="container">
                 <div class="row">
                
-                    <img class="column" src="src/assets/Logo/Favicon.png" alt=""></img>
+                    <img class="column" src="" alt=""></img>
                 
                 <div class="column"> Powers Family Barbeque Sauce</div>
               
-                    <img class="column" src="./src/assets/Logo/Favicon.png" alt=""></img>
+                     <img class="column" src='' alt=""></img>
               
                 </div>
             </h1>
