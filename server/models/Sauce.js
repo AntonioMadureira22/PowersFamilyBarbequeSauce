@@ -1,4 +1,5 @@
-const { Schema, model, Types } = require("mongoose");
+const mongoose = require('mongoose');
+const { Schema, model, Types } = mongoose;
 
 const sauceSchema = new Schema({
   name: {
@@ -92,7 +93,3 @@ module.exports = Sauce;
 //     id: false,
 //   }
 // );
-
-const Sauce = model("Sauce", SauceSchema);
-
-module.exports = Sauce;

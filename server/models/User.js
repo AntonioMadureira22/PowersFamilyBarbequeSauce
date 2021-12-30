@@ -1,4 +1,5 @@
-const { Schema, model, Types } = require("mongoose");
+const mongoose = require('mongoose');
+const { Schema, model, Types } = mongoose;
 const bcrypt = require('bcrypt');
 const Order = require('./Order');
 
@@ -29,7 +30,7 @@ const UserSchema = new Schema(
     next();
   });
 
-  userSchema.methods.isCorrectPassword = async function(password) {
+  UserSchema.methods.isCorrectPassword = async function(password) {
     return await bcrypt.compare(password, this.password);
   };
 

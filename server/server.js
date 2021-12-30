@@ -11,12 +11,6 @@ const cors = require("cors");
 app.use(cors());
 app.use(express.json());
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/powers', {
-  useFindAndModify: false,
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-});
-
 require("dotenv").config({ path: "./config.env" });
 
 
