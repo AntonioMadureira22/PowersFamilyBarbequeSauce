@@ -4,7 +4,15 @@ function About() {
     return (
         <section>
             <h1 id='about' className="container">
-                Powers Family Barbeque Sauce
+                <div class="row">
+               
+                    <img class="column" src="src/assets/Logo/Favicon.png" alt=""></img>
+                
+                <div class="column"> Powers Family Barbeque Sauce</div>
+              
+                    <img class="column" src="./src/assets/Logo/Favicon.png" alt=""></img>
+              
+                </div>
             </h1>
             <br/>
             <h2 className="container">
