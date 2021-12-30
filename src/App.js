@@ -2,7 +2,6 @@
 import React from 'react';
 import './Nav.css';
 import Nav from './components/Nav'
-import DemoCarousel from './components/Carousel';
 // import About from './components/About'
 
 function App() {
