@@ -5,6 +5,7 @@ import Nav from "./components/Nav";
 import About from "./components/About";
 import Store from "./components/Store";
 import Login from "./components/Login";
+import Signup from "./components/SignUp";
 import {
   BrowserRouter as Router,
   Switch,
@@ -51,6 +52,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/store" element={<Store />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
           </Routes>
           <h2 className="Name"></h2>
           <br />
