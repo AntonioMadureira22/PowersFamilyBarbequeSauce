@@ -37,12 +37,12 @@ function Store() {
                 <div classname="flex-row">
                     {filterSauces().map((sauces) => (
                         <StoreItem
-                        key={sauce._id}
-                        _id={sauce._id}
-                        image={sauce.image}
-                        name={sauce.name}
-                        price={sauce.price}
-                        quantity={sauce.quantity}
+                        key={sauces._id}
+                        _id={sauces._id}
+                        image={sauces.image}
+                        name={sauces.name}
+                        price={sauces.price}
+                        quantity={sauces.quantity}
                         />
                     ))}
                     </div>
