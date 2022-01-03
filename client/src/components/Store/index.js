@@ -1,11 +1,11 @@
 import React from 'react';
+// import './style.css';
 
-function Login() {
+function Store() {
     return (
         <section>
-
         </section>
     )
 }
 
-export default Login;
+export default Store;

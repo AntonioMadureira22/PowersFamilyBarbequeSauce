@@ -22,6 +22,10 @@ class Nav extends React.Component {
             Login✩
           </a>
           <br/>
+          <a href="/signup" id="signup" className="menu-item">
+            Sign Up✩
+          </a>
+          <br/>
           <a href="/store" id="store" className="menu-item">
             Store✩
           </a>
