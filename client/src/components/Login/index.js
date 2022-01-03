@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { LOGIN } from '../../utils/mutations';
 import Auth from '../../utils/auth';
+import './style.css'
 
 function Login(props) {
   const [formState, setFormState] = useState({ email: '', password: '' });
@@ -29,23 +30,31 @@ function Login(props) {
   };
 
   return (
-    <div className="container my-1">
 
-      <h2>Login</h2>
+
+    <div class="container">
+
+        <h2 class="container">Login</h2>
+<br/>
+<br/>
+<br/>
+<br/>
       <form onSubmit={handleFormSubmit}>
-        <div className="flex-row space-between my-2">
-          <label htmlFor="email">Email address:</label>
-          <input
+        
+          <div>
+          <label for="email">Email address:</label>
+          <input class="fill"
             placeholder="youremail@test.com"
             name="email"
             type="email"
             id="email"
             onChange={handleChange}
           />
-        </div>
-        <div className="flex-row space-between my-2">
+          </div>
+        
+        <div>
           <label htmlFor="pwd">Password:</label>
-          <input
+          <input class="fill"
             placeholder="******"
             name="password"
             type="password"
@@ -59,7 +68,7 @@ function Login(props) {
           </div>
         ) : null}
         <div className="flex-row flex-end">
-          <button type="submit">Submit</button>
+          <button class="button" type="submit">Submit</button>
         </div>
       </form>
     </div>
