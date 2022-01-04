@@ -18,6 +18,14 @@ class Nav extends React.Component {
             About✩
           </a>
           <br/>
+          <a href="/login" id="login" className="menu-item">
+            Login✩
+          </a>
+          <br/>
+          <a href="/signup" id="signup" className="menu-item">
+            Sign Up✩
+          </a>
+          <br/>
           <a href="/store" id="store" className="menu-item">
             Store✩
           </a>
