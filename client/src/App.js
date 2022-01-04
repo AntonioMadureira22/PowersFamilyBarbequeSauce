@@ -6,6 +6,7 @@ import About from "./components/About";
 import Store from "./components/Store";
 import Login from "./components/Login";
 import Signup from "./components/SignUp";
+import Contact from "./components/Contact";
 import {
   BrowserRouter as Router,
   Switch,
@@ -53,6 +54,7 @@ function App() {
             <Route path="/store" element={<Store />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
+            <Route path="/contact" element={<Contact />} />
           </Routes>
           <h2 className="Name"></h2>
           <br />
