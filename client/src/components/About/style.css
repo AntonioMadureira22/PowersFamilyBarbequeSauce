@@ -7,3 +7,12 @@ body {
     width: 75%;
     text-align: center !important;
 }
+
+h2 {
+    font-weight: bold;
+    color: red;
+}
+
+label {
+    color: red;
+}
