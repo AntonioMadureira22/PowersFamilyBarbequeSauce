@@ -17,6 +17,10 @@ const UserSchema = new Schema(
       unique: true,
       match: /.+\@.+\..+/,
     },
+    password: {
+      type: String,
+      required: 'Password Required!',
+    },
     // Number of items in the cart
     orders: [Order.schema]
   });

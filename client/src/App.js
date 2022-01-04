@@ -1,5 +1,6 @@
 // import './App.css';
 import * as React from "react";
+import React, { useState } from "react";
 import "./Nav.css";
 import Nav from "./components/Nav";
 import About from "./components/About";
@@ -42,6 +43,7 @@ const client = new ApolloClient({
 });
 
 function App() {
+ 
   return (
     <ApolloProvider client={client}>
       <div className="App">
