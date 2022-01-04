@@ -1,5 +1,4 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { useContext } = require('react');
 const { User, Sauce, Category, Order } = require('../models');
 const { signToken } = require('../utils/auth');
 
@@ -21,9 +20,13 @@ const resolvers = {
                 };
             }
 
-            return await Product.find(params).populate('category');
+            return await Sauce.find(params).populate('category');
         },
         sauce: async (parent, { _id }) => {
+          return await Sauce.findById(_id).populate('category');
+        },
+
+          user: async (parent, args, context) => {
             if (context.user) {
                 const user = await User.findById(context.user._id).populate({
                     path: 'orders.sauces',
@@ -67,10 +70,10 @@ const resolvers = {
     
           return { token, user };
         },
-        addOrder: async (parent, { products }, context) => {
+        addOrder: async (parent, { sauces }, context) => {
           console.log(context);
           if (context.user) {
-            const order = new Order({ products });
+            const order = new Order({ sauces });
     
             await User.findByIdAndUpdate(context.user._id, { $push: { orders: order } });
     
@@ -86,10 +89,10 @@ const resolvers = {
     
           throw new AuthenticationError('Not logged in');
         },
-        updateProduct: async (parent, { _id, quantity }) => {
+        updatesauce: async (parent, { _id, quantity }) => {
           const decrement = Math.abs(quantity) * -1;
     
-          return await Product.findByIdAndUpdate(_id, { $inc: { quantity: decrement } }, { new: true });
+          return await Sauce.findByIdAndUpdate(_id, { $inc: { quantity: decrement } }, { new: true });
         },
         login: async (parent, { email, password }) => {
           const user = await User.findOne({ email });

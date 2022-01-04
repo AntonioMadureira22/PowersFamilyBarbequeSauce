@@ -1,11 +1,13 @@
 // import './App.css';
 import * as React from "react";
+import React, { useState } from "react";
 import "./Nav.css";
 import Nav from "./components/Nav";
 import About from "./components/About";
 import Store from "./components/Store";
 import Login from "./components/Login";
 import Signup from "./components/SignUp";
+import Contact from "./components/Contact";
 import {
   BrowserRouter as Router,
   Switch,
@@ -41,6 +43,7 @@ const client = new ApolloClient({
 });
 
 function App() {
+ 
   return (
     <ApolloProvider client={client}>
       <div className="App">
@@ -53,6 +56,7 @@ function App() {
             <Route path="/store" element={<Store />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
+            <Route path="/contact" element={<Contact />} />
           </Routes>
           <h2 className="Name"></h2>
           <br />

@@ -28,10 +28,3 @@ app.listen(port, () => {
   console.log(`Server is running on port: ${port}`);
 });
 
-server.listen().then(() => {
-  console.log(`
-    Server is running!
-    Listening on port 4000
-    Explore at https://studio.apollographql.com/sandbox
-  `);
-});
