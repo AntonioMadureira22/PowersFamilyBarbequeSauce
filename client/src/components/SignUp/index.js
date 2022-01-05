@@ -1,15 +1,36 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import Auth from '../../utils/auth';
 import { ADD_USER } from '../../utils/mutations';
 
-function Signup(props) {
-  const [formState, setFormState] = useState({ email: '', password: '' });
-  const [addUser] = useMutation(ADD_USER);
+function Signup() {
+  const [formState, setFormState] = useState({
+    username: '',
+    email: '',
+    password: '' });
+  const [addUser, { error }] = useMutation(ADD_USER);
+
+    const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+  };
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
+    
+    // try {
+    //   const { data } = await addUser({
+    //     variables: { ...formState },
+    //   });
+
+    //   Auth.login(data.addUser.token);
+    // } catch (e) {
+    //   console.error(e);
+    // }
+    
     const mutationResponse = await addUser({
       variables: {
         email: formState.email,
@@ -21,18 +42,12 @@ function Signup(props) {
     Auth.login(token);
   };
 
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setFormState({
-      ...formState,
-      [name]: value,
-    });
-  };
+
 
   return (
     <div className="container">
 
-      <h2 class="container">Signup</h2>
+      <h2 className="container">Signup</h2>
       <br/>
       <br/>
       <br/>
@@ -40,31 +55,36 @@ function Signup(props) {
       <form onSubmit={handleFormSubmit}>
         <div>
           <label htmlFor="username">Username:</label>
-          <input 
+          <input
+            className="form-input" 
             placeholder="Username"
             name="username"
             type="username"
             id="username"
+            value={formState.username}
             onChange={handleChange}
           />
         </div>
         <div>
           <label htmlFor="email">Email:</label>
-          <input class="fill"
+          <input 
+            className="fill"
             placeholder="youremail@test.com"
             name="email"
             type="email"
             id="email"
+            value={formState.email}
             onChange={handleChange}
           />
         </div>
         <div>
           <label htmlFor="pwd">Password:</label>
-          <input class="fill"
+          <input className="fill"
             placeholder="******"
             name="password"
             type="password"
             id="pwd"
+            value={formState.password}
             onChange={handleChange}
           />
         </div>
