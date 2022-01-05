@@ -34,6 +34,7 @@ db.once('open', async () => {
         {
             name: 'Pineapple',
             description: 'Pineapple Grilling Sauce',
+            category: categories[1]._id,
             image: 'Pineapple.jpg',
             category: categories[1]._id,
             price: 7,
@@ -51,17 +52,17 @@ db.once('open', async () => {
             name: 'Cheries Garlic Dill Pickles',
             description: 'Garlic Dill Pickles',
             image: 'Pickles.jpg',
-            category: categories[2]._id,
+            category: categories[1]._id,
             price: 5,
             quantity: 12
         }
     ]);
-    console.log('products seeded');
+    console.log('sauces seeded');
 
     await User.deleteMany();
 
     await User.create({
-        username: 'Powers',
+        username: 'powers',
         email: 'powers@gmail.com',
         password: 'POWERS123',
         orders: [
