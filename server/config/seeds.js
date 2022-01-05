@@ -6,6 +6,7 @@ db.once('open', async () => {
 
     const categories = await Category.insertMany([
         { name: 'Sauce' },
+        { name: 'Grilling Sauce'},
         { name: 'Pickles' }
     ]);
 
@@ -18,6 +19,7 @@ db.once('open', async () => {
             name: 'Original',
             description: 'Original recipe',
             image: 'Original.jpg',
+            category: categories[0]._id,
             price: 7,
             quantity: 12
         },
@@ -25,13 +27,16 @@ db.once('open', async () => {
             name: 'Honey',
             description: 'Honey BBQ',
             image: 'Honey.jpg',
+            category: categories[0]._id,
             price: 7,
             quantity: 12
         },
         {
             name: 'Pineapple',
             description: 'Pineapple Grilling Sauce',
+            category: categories[1]._id,
             image: 'Pineapple.jpg',
+            category: categories[1]._id,
             price: 7,
             quantity: 12
         },
@@ -39,17 +44,25 @@ db.once('open', async () => {
             name: 'Chipotle',
             description: 'Spicy Chipotle BBQ',
             image: 'Chipotle.jpg',
+            category: categories[0]._id,
             price: 7,
+            quantity: 12
+        },
+        {
+            name: 'Cheries Garlic Dill Pickles',
+            description: 'Garlic Dill Pickles',
+            image: 'Pickles.jpg',
+            category: categories[1]._id,
+            price: 5,
             quantity: 12
         }
     ]);
-    console.log('products seeded');
+    console.log('sauces seeded');
 
     await User.deleteMany();
 
     await User.create({
-        firstName: 'Phil',
-        lastName: 'Powers',
+        username: 'powers',
         email: 'powers@gmail.com',
         password: 'POWERS123',
         orders: [
