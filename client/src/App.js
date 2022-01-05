@@ -7,6 +7,7 @@ import Store from "./components/Store";
 import Login from "./components/Login";
 import Signup from "./components/SignUp";
 import Contact from "./components/Contact";
+import { StoreProvider } from './utils/GlobalState';
 import {
   BrowserRouter as Router,
   Switch,
@@ -47,6 +48,7 @@ function App() {
       <div className="App">
         
         <header className="App-header">
+          <StoreProvider>
           <Nav />
           <Routes>
             
@@ -56,6 +58,7 @@ function App() {
             <Route path="/signup" element={<Signup />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
+          </StoreProvider>
           <h2 className="Name"></h2>
           <br />
           <div className="slogan"></div>
