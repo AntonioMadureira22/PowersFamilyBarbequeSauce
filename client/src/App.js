@@ -2,6 +2,7 @@
 // import * as React from "react";
 import React from "react";
 import "./Nav.css";
+import Cart from "./components/Cart";
 import Detail from './pages/Detail';
 import Home from './pages/Home';
 import Nav from "./components/Nav";
@@ -57,7 +58,7 @@ function App() {
           <StoreProvider>
           <Nav />
           <Routes>
-            <Route path="/" element={Home} />
+            <Route path="/" element={<Cart />} />
             <Route path="/about" element={<About />} />
             <Route path="/store" element={<Store />} />
             <Route path="/login" element={<Login />} />
