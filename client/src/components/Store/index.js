@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import StoreItem from '../StoreItem';
+import Cart from '../Cart'
 import { useStoreContext } from '../../utils/GlobalState';
 import { UPDATE_SAUCES } from '../../utils/actions';
 import { useQuery } from '@apollo/client';
@@ -33,6 +34,7 @@ function Store() {
     return (
         <div className='my-2'>
             <h2>Our Products:</h2>
+            <Cart />
             {state.sauces.length ? (
                 <div classname="flex-row">
                     {filterSauces().map((sauces) => (

@@ -75,10 +75,18 @@
     background-position: center;
   }
 
+  img {
+    max-width: 25%;
+  }
+
   .Name {
     background-color: transparent;
     font-family: cursive;
     
+  }
+
+  .shopping-cart {
+    color: white;
   }
 
   h2 {

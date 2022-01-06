@@ -67,7 +67,7 @@ db.once('open', async () => {
         password: 'POWERS123',
         orders: [
             {
-                sauces: []
+                sauces: [sauce[0]._id, sauce[0]._id]
             }
         ]
     });
