@@ -1,15 +1,19 @@
 // import './App.css';
-import * as React from "react";
-import React, { useState } from "react";
+// import * as React from "react";
+import React from "react";
 import "./Nav.css";
+import Detail from './pages/Detail';
+import Home from './pages/Home';
 import Nav from "./components/Nav";
 import About from "./components/About";
 import Store from "./components/Store";
 import Login from "./components/Login";
 import Signup from "./components/SignUp";
 import Contact from "./components/Contact";
+import { StoreProvider } from './utils/GlobalState';
 import {
-  BrowserRouter as Router,
+  BrowserRouter as 
+  Router,
   Switch,
   Route,
   Link,
@@ -21,24 +25,25 @@ import {
   InMemoryCache,
   createHttpLink,
 } from "@apollo/client";
+import { setContext } from '@apollo/client/link/context';
 // import DemoCarousel from "./components/Carousel";
 
 const httpLink = createHttpLink({
-  uri: 'http://localhost:3001/graphql',
+  uri: '/graphql',
 });
 
-// const authLink = setContext((_, { headers }) => {
-//   const token = localStorage.getItem('id_token');
-//   return {
-//     headers: {
-//       ...headers,
-//       authorization: token ? `Bearer ${token}` : '',
-//     },
-//   };
-// });
+const authLink = setContext((_, { headers }) => {
+  const token = localStorage.getItem('id_token');
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : '',
+    },
+  };
+});
 
 const client = new ApolloClient({
-  link: httpLink,
+  link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
 });
 
@@ -49,15 +54,18 @@ function App() {
       <div className="App">
         
         <header className="App-header">
+          <StoreProvider>
           <Nav />
           <Routes>
-            
+            <Route path="/" element={Home} />
             <Route path="/about" element={<About />} />
             <Route path="/store" element={<Store />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/sauces/:id" element={Detail} />
           </Routes>
+          </StoreProvider>
           <h2 className="Name"></h2>
           <br />
           <div className="slogan"></div>
