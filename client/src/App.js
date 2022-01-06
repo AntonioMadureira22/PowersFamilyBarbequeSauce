@@ -56,7 +56,7 @@ function App() {
           <StoreProvider>
           <Nav />
           <Routes>
-            <Route path="/" element={Home} />
+            <Route path="/" component={Home} />
             <Route path="/about" element={<About />} />
             <Route path="/store" element={<Store />} />
             <Route path="/login" element={<Login />} />
