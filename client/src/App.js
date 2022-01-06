@@ -12,7 +12,8 @@ import Signup from "./components/SignUp";
 import Contact from "./components/Contact";
 import { StoreProvider } from './utils/GlobalState';
 import {
-  BrowserRouter as Router,
+  BrowserRouter as 
+  Router,
   Switch,
   Route,
   Link,
@@ -56,7 +57,7 @@ function App() {
           <StoreProvider>
           <Nav />
           <Routes>
-            <Route path="/" component={Home} />
+            <Route path="/" element={Home} />
             <Route path="/about" element={<About />} />
             <Route path="/store" element={<Store />} />
             <Route path="/login" element={<Login />} />
