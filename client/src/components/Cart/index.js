@@ -10,15 +10,15 @@ const Cart = () => {
     const [state, dispatch] = useStoreContext();
     const [getCheckout, { data }] = useLazyQuery(QUERY_CHECKOUT);
 
-    useEffect(() => {
-        async function getCart() {
-            const cart = await idbPromise('cart', 'get');
-            dispatch({ type: ADD_MULTIPLE_TO_CART, sauces: [...cart] });
-        }
-        if (!state.cart.length) {
-            getCart();
-        }
-    }, [state.cart.length, dispatch]);
+    // useEffect(() => {
+    //     async function getCart() {
+    //         const cart = await idbPromise('cart', 'get');
+    //         dispatch({ type: ADD_MULTIPLE_TO_CART, sauces: [...cart] });
+    //     }
+    //     if (!state.cart.length) {
+    //         getCart();
+    //     }
+    // }, [state.cart.length, dispatch]);
 
     function toggleCart() {
         dispatch({ type: TOGGLE_CART });

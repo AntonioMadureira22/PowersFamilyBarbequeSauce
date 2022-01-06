@@ -1,7 +1,9 @@
 // import './App.css';
 // import * as React from "react";
-import React, { useState } from "react";
+import React from "react";
 import "./Nav.css";
+import Detail from './pages/Detail';
+import Home from './pages/Home';
 import Nav from "./components/Nav";
 import About from "./components/About";
 import Store from "./components/Store";
@@ -54,12 +56,13 @@ function App() {
           <StoreProvider>
           <Nav />
           <Routes>
-            
+            <Route path="/" element={Home} />
             <Route path="/about" element={<About />} />
             <Route path="/store" element={<Store />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/sauces/:id" element={Detail} />
           </Routes>
           </StoreProvider>
           <h2 className="Name"></h2>
