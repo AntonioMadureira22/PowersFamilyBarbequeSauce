@@ -75,6 +75,9 @@
     background-position: center;
   }
 
+  img {
+    max-width: 25%;
+  }
 
   .Name {
     background-color: transparent;
